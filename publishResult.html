@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Publish new event</title>
+<title>Your event info</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stylesheet.css">
@@ -14,7 +14,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
-<script src="java.js"></script> 
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -25,6 +24,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
+ <script src="java.js"></script> 
+
 </head>
 <body class="w3-black">
 
@@ -58,53 +59,26 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </div>
 
 <!-- Page Content -->
- 
-<div class="w3-padding-large" id="main">
-    <form target="_blank" method="get" action="publishResult.html">
- <h5> Name:</h5>
-  <input type="text" id="name" name="name">
-        <br>
-        <br>
-    <h5> Event information:</h5>
-    <textarea rows="10" id="note" cols="50">
-
-</textarea>
-       <br>
-       <br> 
-<h5>Must have ticket:</h5>
-<input type="radio" id="yes" name="ticket" value="yes"> Yes<br>
-  <input type="radio"id="no" name="ticket" value="no"> No<br>
-        <h10>Note: if you didn't choose one, the defualt is "no"</h10>
-        <br>
-        <br>
- <h5>Gender of attendees:</h5>
-  <select>
-  <option value="both" id="both">Both</option>
-  <option value="male" id="male">Male</option>
-  <option value="female" id="female">Female</option>
-</select>
-        <br>
-          <h10>Note: if you didn't choose one, the defualt is "both"</h10>
-   <br>
     <br>
-        <h5>Ages of attendees:</h5>
- <input type="checkbox" id="kid" name="age" value="kids"> Kids<br>
-  <input type="checkbox" id="teen" name="age" value="teenage"> Teenagers<br>
-        <input type="checkbox" id="adult" name="age" value="adult"> Adults<br>
-        <br>
-        <button id="submit" value="Submit" > Submit </button>
-       
-</form>
- 
-  
- 
-<!-- END PAGE CONTENT -->
+    <br>
+    <br>
+    <div align ='center'>
+  <script align = 'center'> 
+        var name = localStorage.getItem("name");
+        var note = localStorage.getItem("note");
+        var ticket = localStorage.getItem("ticket");
+        var attendees = localStorage.getItem("attendees");
+        var age = localStorage.getItem("age");
+      
+document.writeln("<h3>Thank you!</h3>");
+document.writeln("<h4>Here is your information:</h4>");
+document.write("Name of publisher: "+name+"<br></p>");
+document.write("Event Information: "+note+"<br>");
+document.write("<p>must have ticket: "+ticket); 
+document.write("<p>Type of attendees: "+attendees+" "+"<br>");
+document.write("Allowed age(s): "+age);
+      </script> 
 </div>
-
-
-
- 
-
 </body>
 
     
